@@ -1,0 +1,164 @@
+$angle: 8px;
+$angle-o: 4px;
+$yellow: #fece03;
+$background: #343332;
+
+:host {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ededed;
+    z-index: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.headline {
+    color: $background;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.canvas-wrapper {
+    position: relative;
+    width: 332px;
+    height: 332px;
+    border: 16px solid $yellow;
+    margin-bottom: 2rem;
+    box-shadow: -8px 8px 0 $background;
+
+    &::after {
+        transition: all 0.15s linear 0s;
+        content: '';
+        position: absolute;
+        bottom: -22px;
+        right: -13px;
+        width: 11px;
+        height: 11px;
+        background-color: $background;
+        transform: rotate(45deg);
+        z-index: -1;
+    }
+
+    &::before {
+        transition: all 0.15s linear 0s;
+        content: '';
+        position: absolute;
+        top: -14px;
+        left: -21px;
+        width: 11px;
+        height: 11px;
+        background-color: $background;
+        transform: rotate(45deg);
+        z-index: -1;
+    }
+}
+
+.drawarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $background;
+
+    &:hover {
+        cursor: crosshair;
+    }
+}
+
+.prediction {
+    margin-top: 2rem;
+    color: $background;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.button {
+    top: 0;
+    left: 0;
+    transition: all 0.15s linear 0s;
+    position: relative;
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: $yellow;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: $background;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+
+    box-shadow: -6px 6px 0 $background;
+    text-decoration: none;
+
+    &:hover {
+        top: 3px;
+        left: -3px;
+        box-shadow: -3px 3px 0 $background;
+
+        &::after {
+            top: 1px;
+            left: -2px;
+            width: $angle-o;
+            height: $angle-o;
+        }
+
+        &::before {
+            bottom: -2px;
+            right: 1px;
+            width: $angle-o;
+            height: $angle-o;
+        }
+    }
+
+    &::after {
+        transition: all 0.15s linear 0s;
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: -4px;
+        width: $angle;
+        height: $angle;
+        background-color: $background;
+        transform: rotate(45deg);
+        z-index: -1;
+    }
+
+    &::before {
+        transition: all 0.15s linear 0s;
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        right: 2px;
+        width: $angle;
+        height: $angle;
+        background-color: $background;
+        transform: rotate(45deg);
+        z-index: -1;
+    }
+    &:active {
+        top: 6px;
+        left: -6px;
+        box-shadow: none;
+
+        &:before {
+            bottom: 1px;
+            right: 1px;
+        }
+
+        &:after {
+            top: 1px;
+            left: 1px;
+        }
+    }
+}
