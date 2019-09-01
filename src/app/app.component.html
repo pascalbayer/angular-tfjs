@@ -2,7 +2,7 @@
     <div class="wrapper">
         <h2 class="headline">Draw a Number</h2>
         <div class="canvas-wrapper">
-            <canvas #canvas appDrawarea class="drawarea" width="600" height="600"></canvas>
+            <canvas #canvas appDrawarea class="drawarea" width="600" height="600" (image)="predict($event)"></canvas>
         </div>
         <button class="button" (click)="clear()">Clear</button>
         <div class="prediction">
