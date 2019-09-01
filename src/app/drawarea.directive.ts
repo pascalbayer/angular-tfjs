@@ -41,14 +41,12 @@ export class DrawareaDirective implements OnInit {
     @HostListener('mousemove', ['$event'])
     onMouseMove(event: MouseEvent) {
         this.drawPath(event);
-        this.image.emit(this.getImageData());
     }
 
     @HostListener('mouseleave', ['$event'])
     onMouseLeave(event: MouseEvent) {
         this.drawPath(event);
         this.resetPosition();
-        this.image.emit(this.getImageData());
     }
 
     private storePosition(event: MouseEvent) {
