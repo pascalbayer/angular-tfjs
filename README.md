@@ -1,4 +1,4 @@
-# AngularTfjs
+# The Angular Handwriting Digit Prediction Demo App for the Angular Stuttgart Meetup
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
 
